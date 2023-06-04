@@ -1,0 +1,308 @@
+@import '_var.scss';
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu-Bold"),
+    url("./fonts/ubuntu-bold.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu-Medium"),
+    url("./fonts/ubuntu-medium.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu-Regular"),
+    url("./fonts/ubuntu-regular.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Medium"),
+    url("./fonts/roboto-medium.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-Bold"),
+    url("./fonts/worksans-bold.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-SemiBold"),
+    url("./fonts/worksans-semibold.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-Medium"),
+    url("./fonts/worksans-medium.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-Regular"),
+    url("./fonts/worksans-regular.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-Light"),
+    url("./fonts/worksans-light.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@keyframes load {
+  from {
+  left: -150px;
+  } to {
+  left: 100%;
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0;
+  } to {
+    rotate: 360deg;
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Ubuntu", sans-serif ;
+}
+
+.list-rst {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.disp-no {
+  display: none;
+}
+
+.btn-reset {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-reset:focus-visible {
+  outline: none;
+}
+
+a, a:link, a:visited  {
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: none;
+}
+
+a:hover  {
+  text-decoration: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.alert-span {
+  color: $error;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.container {
+  max-width: 1370px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.section-title {
+  margin: 0;
+  padding: 0;
+  color: $black;
+  font-family: "WorkSans", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 39.88px;
+}
+
+.bloсk-title {
+  margin: 0;
+  padding: 0;
+  color: $black;
+  font-family: "WorkSans", sans-serif;
+  font-size: 20px;
+  line-height: 23.46px;
+  font-weight: 500;
+}
+
+.input {
+  border: 1px solid $secondary-sky;
+  border-radius: 7px;
+  padding: 8px 10px 8px 16px;
+  background-color: $white;
+  color: $secondary-black;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  transition: border-color 0.3s ease-in-out;
+
+  &:focus-visible {
+    outline: none;
+    border-color: #116ACC;
+  }
+
+  &:hover {
+    border-color: #116ACC;
+  }
+
+  &--alert {
+    border-color: $error;
+  }
+}
+
+.primary-button {
+  position: relative;
+  border-radius: 7px;
+  padding: 14px 21px;
+  background-color: $primary;
+  color: $white;
+  font-size: 14px;
+  line-height: 20px;
+  transition: outline 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:focus-visible {
+    outline: 1px solid $primary;
+    outline-offset: 3px;
+  }
+
+  &:hover {
+    outline: none;
+    background-color: $info;
+  }
+
+  &:active {
+    outline: none;
+    background-color: $primary-dark;
+  }
+
+  &.loading {
+    color: transparent;
+
+    &::before, &::after {
+      display: none;
+    }
+  }
+
+  &.loading .spiner{
+    visibility: visible;
+  }
+}
+
+.back-button {
+  padding-left: 58px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    width: 16px;
+    height: 12px;
+    background-image: url("./img/button-arow.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(207, 207, 211);
+}
+
+.skeleton::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  height: 110%;
+  width: 150px;
+  background: linear-gradient(to right, transparent 0%, #f1ededda 50%, transparent 100%);
+  animation: load infinite 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.spiner {
+  visibility: hidden;
+  position: absolute;
+  top: calc(50% - 14px);
+  left: calc(50% - 14px);
+  width: 28px;
+  height: 28px;
+  background-image: url("./img/spiner.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: spin infinite 1.0s linear;
+}
+
+
+@media (max-width: 575px) {
+  .container {
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+    // overflow: hidden;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+}

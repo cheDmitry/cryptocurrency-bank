@@ -1,0 +1,41 @@
+@import '_var.scss';
+@import '_choices.min.scss';
+@import '_common.scss';
+@import '_login.scss';
+@import '_header.scss';
+@import '_accaunts.scss';
+@import '_accaunt.scss';
+@import '_history.scss';
+@import '_currency.scss';
+@import '_atms.scss';
+@import '../js/elements/autocompliteSelect/autocomplite-select.scss';
+
+.container {
+  max-width: 1370;
+  margin: 0 auto;
+  padding: 0 15px 30 15px;
+}
+
+//МЭИН
+main {
+  padding-bottom: 25px;
+}
+
+.main-title {
+  position: absolute;
+  display: none;
+  font-size: 0;
+}
+
+
+
+
+// .container  {
+//   font-family: "WorkSans", sans-serif;
+//   width: 200px;
+//   background-color: $primary;
+// }
+
+// .class {
+//   background-image: url('./unnamed.jpg');
+// }
